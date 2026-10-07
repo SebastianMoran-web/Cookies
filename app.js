@@ -71,4 +71,5 @@ window.addEventListener("DOMContentLoaded", () => {
             mostrarSaludo(e.target.value, nombreActual, false);
         }
     });
+    
 });
