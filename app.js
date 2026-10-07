@@ -74,5 +74,23 @@ window.addEventListener("DOMContentLoaded", () => {
 
     });
 
+function mostrarVisitas(idioma, visitas) {
+    const parrafo = document.getElementById("visitas");
+    parrafo.textContent = idioma === "en"
+        ? `You have visited this page ${visitas} times`
+        : `Has visitado esta página ${visitas} veces`;
+}
+
+    let visitas = obtenerCookie("visitas");
+
+    if(visitas === null) {
+        visitas = 1;
+    }else{
+        visitas = Number(visitas) + 1;
+
+    }
+
+    guardarCookie("visitas", visitas);
+    mostrarVisitas(idioma, visitas);
 
 });
