@@ -93,4 +93,28 @@ function mostrarVisitas(idioma, visitas) {
     guardarCookie("visitas", visitas);
     mostrarVisitas(idioma, visitas);
 
+function borrarCookie(nombre) {
+    document.cookie = `${nombre}=; max-age=0; path=/`;
+}
+
+        document.getElementById("btn-cambiar").addEventListener("click", () => {
+        const nuevoNombre = prompt("Introduce tu nuevo nombre:");
+
+        if (nuevoNombre && nuevoNombre.trim() !== "") {
+            guardarCookie("usuario", nuevoNombre.trim());
+            mostrarSaludo(selectIdioma.value, nuevoNombre.trim(), false);
+        }
+    });
+
+        document.getElementById("btn-olvidar").addEventListener("click", () => {
+        if(confirm("¿Seguro que quieres borrar todos tus datos?")) {
+            borrarCookie("usuario");
+            borrarCookie("tema");
+            borrarCookie("idioma");
+            borrarCookie("visitas");
+            location.reload();
+        }
+        
+    });
 });
+
