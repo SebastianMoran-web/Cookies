@@ -1,6 +1,7 @@
 console.log("CookieLab iniciado");
 
-document.cookie = "usuario=; max-age=0; path=/";
+document.cookie = "prueba=hola; max-age=3600; path=/";
+console.log(document.cookie);
 
 function guardarCookie(nombre, valor) {
     const maxAge = 30 * 24 * 60 * 60; 
@@ -70,6 +71,8 @@ window.addEventListener("DOMContentLoaded", () => {
         if (nombreActual) {
             mostrarSaludo(e.target.value, nombreActual, false);
         }
+
     });
-    
+
+
 });
